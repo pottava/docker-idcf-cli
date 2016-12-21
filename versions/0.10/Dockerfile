@@ -9,7 +9,5 @@ RUN apk --no-cache add --virtual build-dependencies build-base libxml2 libxml2-d
       && pip install git+https://github.com/idcf/cloudstack-api@v0.10.2 \
       && apk del --purge build-dependencies
 
-VOLUME /root/.idcfrc
-
 ENTRYPOINT ["/usr/bin/cloudstack-api"]
 CMD ["--version"]
